@@ -1,0 +1,15 @@
+{
+  "name": "Yummy-Food-Delivery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:akana/Yummy-Food-Delivery.git",
+  "author": "akana <mao.akana@gmail.com>",
+  "license": "MIT",
+  "private": null,
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
