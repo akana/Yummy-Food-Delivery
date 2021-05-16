@@ -1,0 +1,2 @@
+export const MONGODB_URL =  "";
+export const MONGODB_DB_NAME = "";

@@ -8,5 +8,5 @@ route(app);
 authRoute(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`server start at port ${port}`);
 });
