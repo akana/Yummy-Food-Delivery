@@ -1,11 +1,22 @@
 import { connection } from "../db.js";
 import mongodb from "mongodb";
 
-export async function getRestaurants() {
+export async function getRestaurants(lat, lng) {
   let db = await connection.get();
   const collection = db.collection("restaurants");
   const restaurantCursor = await collection
-    .find({}, { projection: { menus: 0 } })
+    .aggregate([
+      {
+        $geoNear: {
+          near: {
+            type: "Point",
+            coordinates: [parseFloat(lng), parseFloat(lat)],
+          },
+          distanceField: "distant",
+          spherical: true,
+        },
+      },
+    ])
     .limit(20);
   let restaurants = await restaurantCursor.toArray();
   return restaurants;

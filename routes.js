@@ -9,7 +9,8 @@ export function route(app) {
   });
 
   app.get("/restaurants", async (req, res) => {
-    let restaurants = await getRestaurants();
+    let { lat, lng } = req.query;
+    let restaurants = await getRestaurants(lat, lng);
     res.send({
       status: "success",
       results: restaurants,
