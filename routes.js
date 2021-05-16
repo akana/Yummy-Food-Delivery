@@ -2,6 +2,7 @@ import {
   getMenusByRestaurant,
   getRestaurants,
 } from "./services/restaurantService.js";
+import _ from "lodash";
 
 export function route(app) {
   app.get("/", (req, res) => {
@@ -9,7 +10,15 @@ export function route(app) {
   });
 
   app.get("/restaurants", async (req, res) => {
-    let { lat, lng } = req.query;
+    let query = req.query;
+    if (!_.has(query, "lat") || !_.has(query, "lng")) {
+      res.status = 400;
+      res.send({
+        status: "error",
+        error: "invalid request query",
+      });
+    }
+    let { lat, lng } = query;
     let restaurants = await getRestaurants(lat, lng);
     res.send({
       status: "success",

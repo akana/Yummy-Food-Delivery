@@ -14,6 +14,7 @@ export async function getRestaurants(lat, lng) {
           },
           distanceField: "distant",
           spherical: true,
+          distanceMultiplier: 0.001,
         },
       },
     ])
