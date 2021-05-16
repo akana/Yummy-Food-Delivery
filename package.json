@@ -7,9 +7,11 @@
   "license": "MIT",
   "private": null,
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
   },
   "scripts": {
-    "start": "node index.js"
-  }
+    "start": "nodemon index.js"
+  },
+  "type": "module"
 }
