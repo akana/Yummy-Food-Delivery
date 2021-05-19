@@ -5,11 +5,17 @@
   "repository": "git@github.com:akana/Yummy-Food-Delivery.git",
   "author": "akana <mao.akana@gmail.com>",
   "license": "MIT",
-  "private": null,
+  "private": false,
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.8.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^3.6.6",
+    "nodemon": "^2.0.7"
   },
   "scripts": {
-    "start": "node index.js"
-  }
+    "start": "nodemon index.js"
+  },
+  "type": "module"
 }
