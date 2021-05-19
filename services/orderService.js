@@ -34,6 +34,6 @@ export async function createOrder(userId, menus) {
         .catch((error) => {
           console.log("Error sending message:", error);
         });
-    }, (i + 1) * 10000);
+    }, (i + 1) * 60000);
   }
 }
